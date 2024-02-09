@@ -13,7 +13,7 @@ interface Message {
   heure_envoi: string | null;
 }
 
-interface Conversation {
+interface Conversatio {
   id: string;
   participants: string[];
   messages: Message[];
@@ -22,7 +22,7 @@ interface Conversation {
 const Conversation: React.FC = () => {
   const idUser = "1";
   const { idConversation } = useParams();
-  const [conversation, setConversation] = useState<Conversation | null>(null);
+  const [conversation, setConversation] = useState<Conversatio | null>(null);
   const [messageContent, setMessageContent] = useState('');
 
  

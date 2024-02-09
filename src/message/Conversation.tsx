@@ -44,7 +44,7 @@ const Conversation: React.FC = () => {
   
     useEffect(() => {
       fetchConversation();
-    }, [idConversation]);
+    });
 
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault(); // Empêcher le comportement par défaut du formulaire

@@ -39,7 +39,7 @@ const ConversationList:  React.FC = () =>  {
     };
     
     fetchConversations();
-  }, []);
+  });
 
   return (
     <div className="conversation-list">

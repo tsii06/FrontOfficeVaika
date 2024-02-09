@@ -71,7 +71,7 @@ const CarItem: React.FC<CarItemProps> = ({ annonce, index }) => {
             }
         };
         fetchPhotos();
-    }, [token]);
+    });
 
     const handleFavoriteClick = async () => {
         try {

@@ -12,7 +12,7 @@ const CarList: React.FC = () => {
 
   useEffect(() => {
       loadEquipes();
-  }, []);
+  });
 
   const loadEquipes = async () => {
       try {

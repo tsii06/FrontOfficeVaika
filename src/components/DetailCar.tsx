@@ -72,7 +72,7 @@ const DetailCar: React.FC<CarItemProps> = ({annonce}) => {
   };
   fetchPhotos();
 
-},[token]);
+});
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
     const handlePhotoClick = (photoUrl: string) => {

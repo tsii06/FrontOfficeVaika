@@ -15,7 +15,7 @@ const DetailPage: React.FC = () => {
 
   useEffect(() => {
       loadEquipes();
-  }, []);
+  });
 
   const loadEquipes = async () => {
       try {

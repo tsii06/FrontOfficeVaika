@@ -1,5 +1,5 @@
 // Importez les modules nécessaires de React et TypeScript
-import React, { FC, ReactNode, ButtonHTMLAttributes } from 'react';
+import { FC, ReactNode, ButtonHTMLAttributes } from 'react';
 
 // Interface pour définir les propriétés du composant Button
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

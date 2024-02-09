@@ -6,7 +6,7 @@ import '../css/CarList.css';
 import axios from 'axios';
 
 const CarList: React.FC = () => {
-  const idUser = "1";
+  // const idUser = "1";
   const [annonce, setAnnonces] = useState([]);
   const token = localStorage.getItem('jwtToken');
 

@@ -51,7 +51,7 @@ const Conversation: React.FC = () => {
 
     try {
       const token = localStorage.getItem('jwtToken');
-      const response = await axios.post(`https://vaika-production.up.railway.app/api/message/${idConversation}/messages`, {
+       await axios.post(`https://vaika-production.up.railway.app/api/message/${idConversation}/messages`, {
         senderId: idUser, // Remplacez par l'ID de l'utilisateur actuel
         content: messageContent
       }, {

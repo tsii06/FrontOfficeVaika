@@ -2,7 +2,7 @@ import Header from '../components/Header';
 import ConversationList from './ConversationList';
 import './conversation.css';
 const Conversations: React.FC = () => {
-     [
+    const conversations = [
         {
           id: 1,
           name: 'Ami 1',

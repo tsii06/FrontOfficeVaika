@@ -50,7 +50,7 @@ const Settings: React.FC= () => {
     fetchData('https://vaika-production.up.railway.app/categories', setCategoriesVoiture);
     fetchData('https://vaika-production.up.railway.app/marques', setMarquesVoiture);
     fetchData('https://vaika-production.up.railway.app/carburants', setCarburantsVoiture);
-  });
+  }, [token]);
 
   const handleCategorieChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setCategorieSelectionnee(event.target.value);

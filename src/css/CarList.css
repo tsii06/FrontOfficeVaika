@@ -1,0 +1,198 @@
+*{
+    font-family: "Rubik";
+}
+.carItems{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+        
+    align-items: center;
+    justify-content: center;
+}
+
+.carItems div {
+    /* background-color: red; */
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.carItem {
+  
+    display: flex;
+    align-items: center;
+ 
+        
+}
+.carItem.visible {
+    animation-play-state: running; /* Démarre l'animation lorsque l'élément devient visible */
+  }
+  
+.carItem .carItem-div {
+      margin: 20px;
+    height: 500px;
+    position: relative;
+}
+
+.carItem .carItem-div img {
+   width: 100%;
+   height: auto;
+}
+.carItem .carItem-div h1 {
+    text-align: left; 
+    text-transform: uppercase;
+    font-size: 3em;
+
+}
+.favorite-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+  }
+  
+  .empty-heart {
+    color: transparent; /* Rend l'icône transparente */
+    border: 2px solid white; /* Ajoute une bordure blanche */
+    font-size: 1em; /* Définit la taille de l'icône */
+  }
+  
+  
+  
+
+.odd{      
+    flex-direction: row-reverse;
+}
+.car-cararcteristique {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,10px));    
+}
+.caract-element {
+    border-bottom: 2px ridge rgba(96, 96, 96, 0.25);
+    
+    /* border-style: ridge; */
+}
+.caract-element div:nth-child(1){
+    text-transform: uppercase;
+    font-weight: bold;
+    color: gray;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+.caract-element div:nth-child(2){
+    
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+.carItem-div button{
+    padding: 20px 30px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 4px;
+    font-family: "Rubik";
+}
+
+
+.detail-link {
+    color: white;
+}
+.detail-btn {
+  padding: 30px 30px;
+}
+
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Optionnel : Ajoute un décalage vers le haut */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Optionnel : Ajuste le décalage vers le haut */
+    }
+  }
+  
+  
+  .item.visible {
+    animation-play-state: running; /* Démarre l'animation lorsque l'élément devient visible */
+  }
+  
+.car-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    animation: fade-in 0.5s ease;
+  }
+  
+  .car-photo {
+   
+    cursor: pointer;
+    flex: 1 1 300px;
+    width: 200px;
+  height: 200px;
+  }
+  
+  .car-photo img {
+    max-width: 100%; /* Limite la largeur de l'image à 100% de la largeur du conteneur parent */
+  max-height: 100%; /* Limite la hauteur de l'image à 100% de la hauteur du conteneur parent */
+  object-fit: contain;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal img {
+    max-width: 90%; /* Ajustez la taille de l'image agrandie selon vos besoins */
+    max-height: 90%;
+    border: 2px solid white; /* Bordure blanche autour de l'image agrandie */
+  }
+
+  /* Ajoutez ces styles à votre fichier CSS existant */
+.favorite-icon {
+  color: red; /* Couleur blanche */
+
+ 
+}
+.favorite-icon {
+  font-size: 24px; /* Taille de l'icône */
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 20px; /* Ajustez selon vos besoins */
+  right: 20px; /* Ajustez selon vos besoins */
+  z-index: 1;
+  color: red; /* Changez la couleur de l'icône selon vos préférences */
+  transition: transform 0.3s ease; /* Transition pour une animation fluide */
+}
+
+.favorite-icon:hover {
+    transform: scale(1.3); /* Agrandissement de l'icône lorsque cliqué */
+    cursor: pointer;
+}
+
+.card-img-top {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+  

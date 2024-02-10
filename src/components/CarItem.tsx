@@ -54,13 +54,14 @@ interface Photo {
 }
 
 const CarItem: React.FC<CarItemProps> = ({ annonce, index }) => {
+    const idUser = localStorage.getItem('user');
     const [photos, setPhotos] = useState<Photo[]>([]);
     const token = localStorage.getItem('jwtToken');
 
     useEffect(() => {
         const fetchPhotos = async () => {
             try {
-                const response = await axios.get(`https://vaika-production.up.railway.app/photos/${annonce.idAnnonce}`, {
+                const response = await axios.get(`https://vaikaback-production.up.railway.app/photos/${annonce.idAnnonce}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -72,19 +73,32 @@ const CarItem: React.FC<CarItemProps> = ({ annonce, index }) => {
         };
         fetchPhotos();
     });
-
-    const handleFavoriteClick = async () => {
+    const headers = {
+        'Authorization': `Bearer ${token}`, // Remplacez VOTRE_TOKEN par votre jeton d'authentification
+        'Content-Type': 'application/json'
+      };
+      
+      // URL de l'API
+      const url = 'https://vaikaback-production.up.railway.app/favoris';
+      
+      const handleFavoriteClick = async () => {
+        const data = {
+          utilisateur: {
+            idUtilisateur: idUser
+          },
+          annonce: {
+            idAnnonce: annonce.idAnnonce
+          }
+        };
+      
         try {
-            const response = await axios.post(`https://vaika-production.up.railway.app/favoris/${annonce.idAnnonce}`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-            setPhotos(response.data);
+          const response = await axios.post(url, data, { headers });
+          console.log('Réponse de la requête:', response.data);
         } catch (error) {
-            console.error('Error fetching photos:', error);
+          console.error('Erreur lors de la requête POST:', error);
         }
-    };
+      };
+      
 
     return (
         <div className={`carItem ${index % 2 === 0 ? 'even' : 'odd'}`}>

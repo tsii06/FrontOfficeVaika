@@ -27,7 +27,7 @@ const ConversationList:  React.FC = () =>  {
     const fetchConversations = async () => {
       try {
         const token = localStorage.getItem('jwtToken');
-        const response = await axios.get('https://vaika-production.up.railway.app/api/message/conversations/'+idUser, {
+        const response = await axios.get('https://vaikaback-production.up.railway.app/api/message/conversations/'+idUser, {
           headers: {
             Authorization: `Bearer ${token}`
           }

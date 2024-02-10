@@ -20,7 +20,7 @@ const DetailPage: React.FC = () => {
   const loadEquipes = async () => {
       try {
           setTimeout(async () => {
-              const result = await axios.get("https://vaika-production.up.railway.app/annonce/"+idAnnonce, {
+              const result = await axios.get("https://vaikaback-production.up.railway.app/annonce/"+idAnnonce, {
               headers: {
                   'Authorization': `Bearer ${token}` // Ajouter le token à l'en-tête Authorization
               }

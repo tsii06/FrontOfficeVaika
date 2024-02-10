@@ -21,7 +21,7 @@ const Header: FC<HeaderProps> = (props) => {
   const handleLogout = async () => {
     try {
         
-         await fetch('https://vaika-production.up.railway.app/login/logout');
+         await fetch('https://vaikaback-production.up.railway.app/login/logout');
           navigate('/');
           
         
@@ -38,11 +38,10 @@ const Header: FC<HeaderProps> = (props) => {
           <h1>Logo</h1>
           <div className={headerClasses}>
               <ul>
-                  <li>Accueil</li>
-                  <li>Annonce</li>
-                  <li>Contact</li>
-                   <li> <NavLink to="/search">Recherche</NavLink></li>
-                  <li> <NavLink to="/fav">Favoris</NavLink></li>
+                
+                  <li><NavLink className="nav-link" to="/annonces">Annonces</NavLink></li>
+                   <li> <NavLink className="nav-link" to="/search">Recherche</NavLink></li>
+                  <li> <NavLink className="nav-link" to="/fav">Favoris</NavLink></li>
                   <li><NavLink className="nav-link" to="/messages">Messages</NavLink></li>
                   <li><button  type='button'  style={{ fontFamily: 'Roboto' }} onClick={handleLogout}>Logout</button></li>
 

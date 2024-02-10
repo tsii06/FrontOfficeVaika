@@ -17,7 +17,7 @@ const CarList: React.FC = () => {
   const loadEquipes = async () => {
       try {
           setTimeout(async () => {
-              const result = await axios.get("https://vaika-production.up.railway.app/annonces", {
+              const result = await axios.get("https://vaikaback-production.up.railway.app/annonces", {
               headers: {
                   'Authorization': `Bearer ${token}` // Ajouter le token à l'en-tête Authorization
               }

@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import './modal.css';
+import { Link } from 'react-router-dom';
 
 const Settings: React.FC= () => {
   const token = localStorage.getItem('jwtToken');
@@ -46,10 +47,10 @@ const Settings: React.FC= () => {
       }
     };
 
-    fetchData('https://vaika-production.up.railway.app/modeles', setModelesVoiture);
-    fetchData('https://vaika-production.up.railway.app/categories', setCategoriesVoiture);
-    fetchData('https://vaika-production.up.railway.app/marques', setMarquesVoiture);
-    fetchData('https://vaika-production.up.railway.app/carburants', setCarburantsVoiture);
+    fetchData('https://vaikaback-production.up.railway.app/modeles', setModelesVoiture);
+    fetchData('https://vaikaback-production.up.railway.app/categories', setCategoriesVoiture);
+    fetchData('https://vaikaback-production.up.railway.app/marques', setMarquesVoiture);
+    fetchData('https://vaikaback-production.up.railway.app/carburants', setCarburantsVoiture);
   }, [token]);
 
   const handleCategorieChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -100,7 +101,7 @@ const Settings: React.FC= () => {
       }
     });
     console.log("Données du formulaire avant la soumission :", detailsVoiture);
-    fetch('https://vaika-production.up.railway.app/recherche', {
+    fetch('https://vaikaback-production.up.railway.app/recherche', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -176,15 +177,15 @@ const Settings: React.FC= () => {
   </div>
  </div>
   <div className='form-group'>
-    <label htmlFor="kilometrage">Kilométrage</label>
+    <label htmlFor="kilometrage">Kilométrage minimum</label>
     <input id="kilometrage" type="number" value={detailsVoiture.kilometrage} onChange={handleKilometrageChange} />
   </div>
   <div className='form-group'>
-    <label htmlFor="nombre-places">Nombre de Places</label>
+    <label htmlFor="nombre-places">Nombre de Places minimum</label>
     <input id="nombre-places" type="number" value={detailsVoiture.nombrePlaces} onChange={handleNombrePlacesChange} />
   </div>
   <div className='form-group'>
-    <label htmlFor="annee">Année de Fabrication</label>
+    <label htmlFor="annee">Année de Fabrication minimum</label>
     <input id="annee" type="number" value={detailsVoiture.annee} onChange={handleAnneeChange} />
   </div>
   <button onClick={handleSubmit}>Soumettre</button>
@@ -217,6 +218,7 @@ const Settings: React.FC= () => {
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{result.voiture.modele.nom}</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{result.voiture.prix}</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{result.voiture.nombrePlace}</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}><Link to={`/detail/${result.idAnnonce}`}>Details</Link></td>
           </tr>
         ))}
       </tbody>

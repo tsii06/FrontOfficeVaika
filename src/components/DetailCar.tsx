@@ -59,7 +59,7 @@ const DetailCar: React.FC<CarItemProps> = ({annonce}) => {
   useEffect(() => {
   const fetchPhotos = async () => {
       try {
-          const response = await axios.get("https://vaika-production.up.railway.app/photos/"+annonce.idAnnonce, {
+          const response = await axios.get("https://vaikaback-production.up.railway.app/photos/"+annonce.idAnnonce, {
               headers: {
                   'Authorization': `Bearer ${token}` // Ajouter le token à l'en-tête Authorization
               }

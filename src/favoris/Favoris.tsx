@@ -5,7 +5,7 @@ import CarItem from '../components/CarItem'; // Créez ce composant si nécessai
 import '../css/CarList.css';
 import axios from 'axios';
 import Header from '../components/Header';
-interface Favoris{
+interface Fav{
   id : number,
   utilisateur: {
     idUtilisateur: number,
@@ -59,7 +59,7 @@ annonce: {
 
 const Favoris: React.FC = () => {
  const idUser = localStorage.getItem('user');
-  const [favoris, setFav] = useState<Favoris[]>([]);
+  const [favoris, setFav] = useState<Fav[]>([]);
   const token = localStorage.getItem('jwtToken');
 
   useEffect(() => {

@@ -7,8 +7,8 @@ const Login: React.FC = () => {
   const navigate = useNavigate(); 
 
   const [user, setUser] = useState({
-    email: 'tsiory@gmail.com',
-    mdp: '123'
+    email: '',
+    mdp: ''
   });
 
   const handleLogin = async () => {
@@ -35,6 +35,7 @@ const Login: React.FC = () => {
           console.log(data);
         } else {
           localStorage.setItem('jwtToken', token);
+          localStorage.setItem('user',data.user.idUtilisateur);
           console.log(data);
           navigate('/annonces');
         }

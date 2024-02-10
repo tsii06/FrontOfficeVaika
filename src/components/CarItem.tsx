@@ -95,11 +95,12 @@ const CarItem: React.FC<CarItemProps> = ({ annonce, index }) => {
                 )}
             </div>
             <div className='carItem-div'>
+                {annonce && (
                 <h1>{annonce.voiture.marque.nom} {annonce.voiture.modele.nom} </h1>
-
+                )}
                 <div className='car-cararcteristique'>
 
-                    <div className='caract-element'>
+                    <div className='caract-element'> 
                         <div>Categorie</div>
                         <div>{annonce.voiture.categorie.nom}</div>
                     </div>
@@ -119,6 +120,7 @@ const CarItem: React.FC<CarItemProps> = ({ annonce, index }) => {
                 <div className='btn'>
                     <button><Link className="detail-link" to={`/detail/${annonce.idAnnonce}`}>Details</Link></button>
                 </div>
+                
             </div>
         </div>
     );

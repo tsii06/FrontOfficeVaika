@@ -2,13 +2,14 @@
 import  { useState , FC } from 'react';
 import '../css/Header.css';
 import { FiMenu } from 'react-icons/fi';
-import { NavLink } from 'react-router-dom';
+import { NavLink ,useNavigate} from 'react-router-dom';
 interface HeaderProps {
     title : string 
 }
 
 // Composant fonctionnel Button
 const Header: FC<HeaderProps> = (props) => {
+  const navigate = useNavigate(); 
   // État local pour suivre l'état du clic
   const [menuClicked, setMenuClicked] = useState(false);
 
@@ -16,6 +17,19 @@ const Header: FC<HeaderProps> = (props) => {
   const handleMenuClick = () => {
     // Inversez l'état du clic à chaque clic
     setMenuClicked(!menuClicked);
+  };
+  const handleLogout = async () => {
+    try {
+        
+         await fetch('https://vaika-production.up.railway.app/login/logout');
+          navigate('/');
+          
+        
+      
+      
+    } catch (error) {
+      console.error('Erreur réseau', error);
+    }
   };
   const headerClasses = `nav-links ${menuClicked ? 'menu-clicked' : ''}`;
   return (
@@ -30,6 +44,8 @@ const Header: FC<HeaderProps> = (props) => {
                    <li> <NavLink to="/search">Recherche</NavLink></li>
                   <li> <NavLink to="/fav">Favoris</NavLink></li>
                   <li><NavLink className="nav-link" to="/messages">Messages</NavLink></li>
+                  <li><button  type='button'  style={{ fontFamily: 'Roboto' }} onClick={handleLogout}>Logout</button></li>
+
               </ul>
           </div>
           <div className='menu' onClick={handleMenuClick}>

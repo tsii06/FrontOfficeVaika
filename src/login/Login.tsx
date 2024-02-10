@@ -7,8 +7,8 @@ const Login: React.FC = () => {
   const navigate = useNavigate(); 
 
   const [user, setUser] = useState({
-    email: '',
-    mdp: ''
+    email: 'antonio@gmail.com',
+    mdp: '123'
   });
 
   const handleLogin = async () => {
